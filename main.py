@@ -2,7 +2,7 @@ import os
 import discord
 
 from dotenv import load_dotenv
-from ai.client import generate_response
+#from ai.client import generate_response
 
 load_dotenv()
 
@@ -44,7 +44,7 @@ async def on_message(message):
         "role": "user",
         "content": message.content
     })
-
+    """
     async with message.channel.typing():
 
         try:
@@ -60,6 +60,7 @@ async def on_message(message):
         except Exception as e:
             print(f"Error: {e}")
             await message.reply("ごめんね、ちょっと調子が悪いみたい……")
+    """
 
 
 bot.run(os.getenv("DISCORD_TOKEN"))
